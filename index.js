@@ -22,7 +22,7 @@ class SuperCar extends Vehicle {
   }
 
   get superCarDetails() {
-    return (this._vehicleDetails + " with a top speed of " + this._topSpeed + " and a cost of " + this._cost + ".");
+    return (this.vehicleDetails + " with a top speed of " + this._topSpeed + " and a cost of " + this._cost + ".");
   }
 
   set priceTag(priceTag) {
@@ -47,5 +47,9 @@ class Motorcycle extends Vehicle {
 }
 
 let myRide = new Motorcycle ('Yamaha', 'Dab x1000', 'Cash Green', 'over 9000 mph', '$1,000,000');
+let myOtherRide = new SuperCar ('Bughati', '$M$', 'Gold', 'over 9000 mph', '$5,000,000');
+let theCarInMyGarage = new Vehicle ('Classic', 'Ultra-Rare', ' Silver');
 
+console.log(theCarInMyGarage.vehicleDetails);
+console.log(myOtherRide.superCarDetails);
 console.log(myRide.bikeDetails);
