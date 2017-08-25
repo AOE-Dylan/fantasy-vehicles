@@ -1,49 +1,51 @@
-class vehicle {
+class Vehicle {
   constructor(make, type, color) {
-    this.make = make;
-    this.type = type;
-    this.color = color;
+    this._make = make;
+    this._type = type;
+    this._color = color;
   }
 
-  vehicleDetails {
-    return ("Your vehicle is a " + type + " made by " + make + " and is " + color);
+  get vehicleDetails() {
+    return ("Your vehicle is a " + this._type + " made by " + this._make + " and is " + this._color);
   }
 
-  vehicleColor {
-    this.vehicleColor = color;
+  set vehicleColor(vehicleColor) {
+    this._vehicleColor = color;
   }
 }
 
-class SuperCar extends vehicle {
+class SuperCar extends Vehicle {
   constructor (make, type, color, topSpeed, cost) {
     super(make, type, color);
-    this.topSpeed = topSpeed;
-    this.cost = cost;
+    this._topSpeed = topSpeed;
+    this._cost = cost;
   }
 
-  superCarDetails {
-    return (this.vehicleDetails + " with a top speed of " + topSpeed " and a cost of " + cost);
+  get superCarDetails() {
+    return (this._vehicleDetails + " with a top speed of " + this._topSpeed + " and a cost of " + this._cost + ".");
   }
 
-  priceTag {
-    this.priceTag = cost;
+  set priceTag(priceTag) {
+    this._priceTag = cost;
   }
 }
 
-class Motorcycle extends vehicle {
+class Motorcycle extends Vehicle {
   constructor(make, type, color, topSpeed, cost) {
     super(make, type, color);
-    this.topSpeed = topSpeed;
-    this.cost = cost;
+    this._topSpeed = topSpeed;
+    this._cost = cost;
   }
 
-  bikeDetails {
-    return (this.vehicleDetails + " with a top speed of " + topSpeed + " and a cost of " + cost);
+  get bikeDetails() {
+    return (this.vehicleDetails + " with a top speed of " + this._topSpeed + " and a cost of " + this._cost + ".");
   }
 
-  bikeSpeed {
-    this.bikeSpeed = topSpeed;
+  set bikeSpeed(topSpeed) {
+    this._bikeSpeed = topSpeed;
   }
 }
 
-let myRide = 
+let myRide = new Motorcycle ('Yamaha', 'Dab x1000', 'Cash Green', 'over 9000 mph', '$1,000,000');
+
+console.log(myRide.bikeDetails);
